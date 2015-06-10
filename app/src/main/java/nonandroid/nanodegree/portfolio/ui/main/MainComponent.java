@@ -1,7 +1,7 @@
-package android.nanodegree.portofolio.ui.main;
+package nonandroid.nanodegree.portfolio.ui.main;
 
-import android.nanodegree.portofolio.ApplicationComponent;
-import android.nanodegree.portofolio.PerActivity;
+import nonandroid.nanodegree.portfolio.ApplicationComponent;
+import nonandroid.nanodegree.portfolio.PerActivity;
 
 import dagger.Component;
 

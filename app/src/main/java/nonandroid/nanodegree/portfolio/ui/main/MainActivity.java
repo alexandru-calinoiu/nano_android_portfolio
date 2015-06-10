@@ -1,17 +1,24 @@
-package android.nanodegree.portofolio.ui.main;
+package nonandroid.nanodegree.portfolio.ui.main;
 
 import android.content.Context;
 import android.content.Intent;
-import android.nanodegree.portofolio.App;
-import android.nanodegree.portofolio.ApplicationComponent;
-import android.nanodegree.portofolio.Navigator;
-import android.nanodegree.portofolio.R;
+
+import nonandroid.nanodegree.portfolio.App;
+import nonandroid.nanodegree.portfolio.ApplicationComponent;
+import nonandroid.nanodegree.portfolio.Navigator;
+import nonandroid.nanodegree.portfolio.R;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import javax.inject.Inject;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements MainView {
 
@@ -27,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     setupComponent();
+
+    ButterKnife.inject(this);
   }
 
   private void setupComponent() {
@@ -42,5 +51,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
   public boolean onCreateOptionsMenu(Menu menu) {
     getMenuInflater().inflate(R.menu.menu_main, menu);
     return true;
+  }
+
+  @OnClick({R.id.spotify_streamer, R.id.scores_app, R.id.library_app, R.id.build_it_bigger, R.id.xyz_reader, R.id.capstone})
+  public void onButtonClick(Button view) {
+    String text = String.format("This button will launch %s.", view.getText());
+
+    Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
+    toast.show();
   }
 }

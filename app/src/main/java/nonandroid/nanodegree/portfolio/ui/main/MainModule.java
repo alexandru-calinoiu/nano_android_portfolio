@@ -1,4 +1,4 @@
-package android.nanodegree.portofolio.ui.main;
+package nonandroid.nanodegree.portfolio.ui.main;
 
 import dagger.Module;
 import dagger.Provides;

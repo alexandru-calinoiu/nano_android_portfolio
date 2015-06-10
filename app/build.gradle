@@ -6,7 +6,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "android.nanodegree.portofolio"
+        applicationId "nonandroid.nanodegree.portofolio"
         minSdkVersion 19
         targetSdkVersion 22
         versionCode 1

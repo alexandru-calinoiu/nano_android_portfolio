@@ -1,22 +1,26 @@
-package android.nanodegree.portofolio.ui.main;
+package nonandroid.nanodegree.portfolio.ui.main;
 
+import nonandroid.nanodegree.portfolio.R;
 import android.support.test.espresso.NoMatchingViewException;
 import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.test.ActivityInstrumentationTestCase2;
 import android.view.View;
 
-import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.hamcrest.TypeSafeMatcher;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.endsWith;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
@@ -64,6 +68,16 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
   public void testContainsCapstone() throws Exception {
     onView(button(withText("Capstone: my own app"))).check(doesExist());
+  }
+
+  public void testDisplaysToastOnSpotifyButtonClick() {
+    onView(withId(R.id.spotify_streamer)).perform(click());
+    onView(withText("This button will launch Spotify Streamer.")).inRoot(withDecorView(not(subject.getWindow().getDecorView()))) .check(matches(isDisplayed()));
+  }
+
+  public void testDisplaysToastOnLibraryAppButtonClick() {
+    onView(withId(R.id.library_app)).perform(click());
+    onView(withText("This button will launch Library App.")).inRoot(withDecorView(not(subject.getWindow().getDecorView()))) .check(matches(isDisplayed()));
   }
 
   @SuppressWarnings("Convert2Lambda")

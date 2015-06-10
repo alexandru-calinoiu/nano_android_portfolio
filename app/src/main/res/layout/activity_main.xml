@@ -9,12 +9,12 @@
                 tools:context=".MainActivity">
 
     <ScrollView
-        android:id="@+id/login_form"
+        android:id="@+id/app_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/inner_login_form"
+            android:id="@+id/inner_app_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -24,10 +24,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="false"
-                android:gravity="start|end"
                 android:maxLines="2"
                 android:ellipsize="end"
-                android:text="@string/list_label" />
+                android:text="@string/list_label"
+                android:gravity="center_horizontal"
+                style="@style/Base.TextAppearance.AppCompat.Title"/>
 
             <Button
                 android:id="@+id/spotify_streamer"

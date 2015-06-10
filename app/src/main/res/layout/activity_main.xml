@@ -32,57 +32,33 @@
 
             <Button
                 android:id="@+id/spotify_streamer"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_spotify_streamer"
-                android:textStyle="bold"/>
+                style="@style/Nanodegree.Portfolio.Button"
+                android:text="@string/action_spotify_streamer"/>
 
             <Button
                 android:id="@+id/scores_app"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_scores_app"
-                android:textStyle="bold"/>
+                style="@style/Nanodegree.Portfolio.Button"
+                android:text="@string/action_scores_app"/>
 
             <Button
                 android:id="@+id/library_app"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_library_app"
-                android:textStyle="bold"/>
+                style="@style/Nanodegree.Portfolio.Button"
+                android:text="@string/action_library_app"/>
 
             <Button
                 android:id="@+id/build_it_bigger"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_build_it_bigger"
-                android:textStyle="bold"/>
+                style="@style/Nanodegree.Portfolio.Button"
+                android:text="@string/action_build_it_bigger"/>
 
             <Button
                 android:id="@+id/xyz_reader"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_xyz_reader"
-                android:textStyle="bold"/>
+                style="@style/Nanodegree.Portfolio.Button"
+                android:text="@string/action_xyz_reader"/>
 
             <Button
                 android:id="@+id/capstone"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_capstone"
-                android:textStyle="bold"/>
+                style="@style/Nanodegree.Portfolio.Button"
+                android:text="@string/action_capstone"/>
 
         </LinearLayout>
     </ScrollView>

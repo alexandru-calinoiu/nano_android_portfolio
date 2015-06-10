@@ -2,16 +2,9 @@ package nonandroid.nanodegree.portfolio.ui.main;
 
 import android.content.Context;
 import android.content.Intent;
-
-import nonandroid.nanodegree.portfolio.App;
-import nonandroid.nanodegree.portfolio.ApplicationComponent;
-import nonandroid.nanodegree.portfolio.Navigator;
-import nonandroid.nanodegree.portfolio.R;
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -19,8 +12,14 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import nonandroid.nanodegree.portfolio.App;
+import nonandroid.nanodegree.portfolio.ApplicationComponent;
+import nonandroid.nanodegree.portfolio.Navigator;
+import nonandroid.nanodegree.portfolio.R;
 
 public class MainActivity extends AppCompatActivity implements MainView {
+
+  private Toast toast;
 
   @Inject
   public Navigator navigator;
@@ -36,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
     setupComponent();
 
     ButterKnife.inject(this);
+
+    toast = new Toast(this);
   }
 
   private void setupComponent() {
@@ -55,9 +56,11 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
   @OnClick({R.id.spotify_streamer, R.id.scores_app, R.id.library_app, R.id.build_it_bigger, R.id.xyz_reader, R.id.capstone})
   public void onButtonClick(Button view) {
+    toast.cancel();
+
     String text = String.format("This button will launch %s.", view.getText());
 
-    Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
+    toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
     toast.show();
   }
 }
